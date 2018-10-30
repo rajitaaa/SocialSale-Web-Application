@@ -8,10 +8,15 @@ function RegisterNewUser($first_name,$email_id,$phone_no,$password,$l_username)
 
 	//Check Email Already Exist Or Not
 	global $con;
-	$sql121="SELECT `emaid_id` FROM `user_login` WHERE `email_id`='".mysqli_real_escape_string($con,$email_id)."' ";
+	$sql121="SELECT `l_username` FROM `user_login` WHERE `l_username`='".mysqli_real_escape_string($con,$l_username)."' ";
+	$sql122="SELECT `email_id` FROM `user_login` WHERE `email_id`='".mysqli_real_escape_string($con,$email_id)."' ";
+
 	$result121=$con->query($sql121);
-	if ($result121->num_rows < 1) {
-		if(strlen($first_name)>0 && strlen($phone_no)>0 && strlen($password)>0 && strlen($l_username)>0)
+	$result122=$con->query($sql122);
+
+	if ($result121->num_rows < 1 && $result122->num_rows<1) {
+		
+		if(strlen($first_name)>0 && strlen($phone_no)>0 && strlen($password)>0 && strlen($l_username)>0 && strlen($email_id)>0)
 		{
 			
 				global $con;
@@ -25,16 +30,6 @@ function RegisterNewUser($first_name,$email_id,$phone_no,$password,$l_username)
 
 					";
 				
-			}
-			else
-			{
-				echo "
-					<div class='alert alert-danger alert-dismissible' role='alert'>
-					  <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
-					  <strong>Oh snap!</strong> Password And Retype Password Should Be Same.
-					</div>
-
-					";
 			}
 		}
 		else
@@ -53,7 +48,7 @@ function RegisterNewUser($first_name,$email_id,$phone_no,$password,$l_username)
 		echo "
 				<div class='alert alert-danger alert-dismissible' role='alert'>
 				  <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
-				  <strong>Oh snap!</strong> Email Already Exist. <a href='forgot.php'>Forgot Password?</a>
+				  <strong>Oh snap!</strong> Username or Email Already Exist. <a href='forgot.php'>Forgot Password?</a>
 				</div>
 
 				";
@@ -75,9 +70,11 @@ function checklogin($l_username,$password)
 
 		if($row['password']==md5($password) && $row['l_username']==$l_username)
 		{
+			
 			session_start();
-			$_SESSION["UserEmail"]=$row['email_id'];
-			$_SESSION["UserFullName"]=$row['first_name'];
+			$_SESSION["email"]=$row['email_id'];
+			$_SESSION["username"]=$row['l_username'];
+			$_SESSION["logged_in"]= true;
 			header('Location: index2.php');
 		}
 		else

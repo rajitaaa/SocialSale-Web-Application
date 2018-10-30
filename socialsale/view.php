@@ -1,7 +1,8 @@
-    <?php
+  
+  <?php
 
      $connect = mysqli_connect("localhost", "root", "", "socialsale");
-    ?>
+?>
 
     <!DOCTYPE html>  
      <html>  
@@ -28,6 +29,7 @@
     <?php
     include_once('header.php');
     ?>
+
 
     <!-- ##### Right Side Cart Area ##### -->
     <div class="cart-bg-overlay"></div>
@@ -104,7 +106,7 @@
     </div>
     <!-- ##### Right Side Cart End ##### -->
 
-          <!-- ##### Shop Grid Area Start ##### -->
+      <!-- ##### Shop Grid Area Start ##### -->
     <section class="shop_grid_area section-padding-80">
         <div class="container">
             <div class="row">
@@ -158,20 +160,22 @@
                                 <div class="product-topbar d-flex align-items-center justify-content-between">
                                     <!-- Total Products -->
                                     <div class="total-products">
-                                        <p><span>4</span> products found</p>
+                                        <p><span> </span> products found</p>
                                     </div>
                                     
                                 </div>
                             </div>
                         </div>
                         
-                         
-                <div class="shop_grid_product_area">
-                <div class="row">
 
+
+ <?php
+    function SearchResults($query)
+    {
              
-             <?php  
-                    $query = "SELECT * FROM products ORDER BY productid DESC";  
+                     $connect = mysqli_connect("localhost", "root", "", "socialsale");
+                   echo '<div class="shop_grid_product_area">
+                    <div class="row">' ;
                     $result = mysqli_query($connect, $query);  
                     while($row = mysqli_fetch_array($result))  
                     {  
@@ -215,16 +219,16 @@
                             </div>
                               ';  
                     }  
-                    ?>  
-                </div>
-            </div>
+                       echo '</div>
+                        </div>';
+                       
+                include_once('footer.php');
+                
+                }
 
-          
-    </body>  
 
+            ?>  
 
-            <?php
-        include_once('footer.php');
-        ?>
-        
+     </body>  
 </html>  
+                

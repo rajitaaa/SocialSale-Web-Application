@@ -1,7 +1,9 @@
  <?php  
  $connect = mysqli_connect("localhost", "root", "", "socialsale");  
+ session_start();
  if(isset($_POST["insert"]))  
  {  
+      $username = $_SESSION["username"];
       $file = addslashes(file_get_contents($_FILES["image"]["tmp_name"])); 
       $productname = mysqli_real_escape_string($connect,$_POST['productname']);
       $price = mysqli_real_escape_string($connect,$_POST['price']);
@@ -9,7 +11,7 @@
       $category = mysqli_real_escape_string($connect,$_POST['category']);
       $type = mysqli_real_escape_string($connect,$_POST['type']);
       $details = mysqli_real_escape_string($connect,$_POST['details']);
-      $query = "INSERT INTO products(name,price,phone,category,type,details,image) VALUES ('$productname','$price','$phone', '$category', '$type', '$details', '$file')";  
+      $query = "INSERT INTO products(name,price,phone,category,type,details,image,username) VALUES ('$productname','$price','$phone', '$category', '$type', '$details', '$file', '$username')";  
       if(mysqli_query($connect, $query))  
       {  
            echo '<script>alert("Product details Inserted into Database")</script>';  
@@ -173,7 +175,7 @@
 
 				<div class="wrap-input100 bg1 rs1-wrap-input100">
 					<span class="label-input100">Contact Number</span>
-					<input class="input100" type="text" name="phone" placeholder="Enter Number Phone">
+					<input class="input100" type="text" name="phone" placeholder="Enter Phone Number">
 				</div>
 
 				<div class="wrap-input100 input100-select bg1">
@@ -242,7 +244,7 @@
   
 
     <?php
-    include_once('header.php');
+    include_once('footer.php');
     ?>
 
 

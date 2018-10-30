@@ -1,6 +1,11 @@
+
 <!DOCTYPE html>
 <html>
 <head>
+
+<?php
+session_start();
+?>
 
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -79,6 +84,7 @@
                                     <li><a href="index2.php">Home</a></li>
                                     <li><a href="display.php">Buy or Rent</a></li>
                                     <li><a href="productform.php">Sell or put on rent</a></li>
+                                    <li><a href="deleteform.php">Delete a product</a></li>
                                     <li><a href="wishlist.html"> Wishlist</a></li>
                                     <li><a href="mentoring/index.php">Mentoring</a></li>
                                     <li><a href="blog.php">Blog Page</a></li>
@@ -98,7 +104,7 @@
             <div class="header-meta d-flex clearfix justify-content-end">
                 <!-- Search Area -->
                 <div class="search-area">
-                    <form action="#" method="post">
+                    <form action="search.php" method="GET">
                         <input type="search" name="search" id="headerSearch" placeholder="Type for search">
                         <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                     </form>
@@ -110,7 +116,7 @@
                     <ul class="dropdown">
                                 
                                 <?php
-                                    if(isset($_SESSION['UserEmail']) && isset($_SESSION['UserFullName']))
+                                    if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true)
                                     {
                                         echo "
                                             <li><a href=''> Welcome </a></li>
@@ -122,7 +128,7 @@
                                     else
                                     {
                                         echo "
-                                            <li><a href='login.php'>Login/Register</a></li>
+                                            <li><a href='index.php'>Login/Register</a></li>
                                         ";
                                     }
                                 ?>
