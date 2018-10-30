@@ -4,33 +4,55 @@
      $connect = mysqli_connect("localhost", "root", "", "socialsale");
 ?>
 
-    <!DOCTYPE html>  
-     <html>  
-          <head>  
-               <title> Social Sale </title>  
-              <meta charset="UTF-8">
-                <meta name="description" content="">
-                <meta http-equiv="X-UA-Compatible" content="IE=edge">
-                <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-               <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
-               <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
-               <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
-              <link rel="icon" href="img/core-img/favicon.ico">
+  
 
-            <!-- Core Style CSS -->
-            <link rel="stylesheet" href="css/core-style.css">
-            <link rel="stylesheet" href="style.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SocialSale - intra-college e-market and mentoring</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Social Sale website">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-          </head>  
+    <!-- Favicon  -->
+    <link rel="icon" href="img/core-img/logo">
 
+    <!-- Core Style CSS -->
+    <link rel="stylesheet" href="css/core-style.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
+    <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
+    <link href="plugins/colorbox/colorbox.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
+    <link rel="stylesheet" type="text/css" href="styles/responsive.css">
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" type="text/css" href="vendor/noui/nouislider.min.css">
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+    
+<body>
 
-    <body>
-        
+  
     <?php
     include_once('header.php');
     ?>
-
-
+    
     <!-- ##### Right Side Cart Area ##### -->
     <div class="cart-bg-overlay"></div>
 
@@ -105,7 +127,25 @@
         </div>
     </div>
     <!-- ##### Right Side Cart End ##### -->
+    
+    <!-- ##### Breadcumb Area Start ##### -->
+    <div class="breadcumb_area breadcumb-style-two bg-img" style="background-image: url(img/bg-img/breadcumb2.jpg);">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <div class="page-title text-center">
+                        <h2 style="color: darkcyan">PRODUCTS</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Breadcumb Area End ##### -->
 
+
+
+
+    <br>
       <!-- ##### Shop Grid Area Start ##### -->
     <section class="shop_grid_area section-padding-80">
         <div class="container">
@@ -122,28 +162,32 @@
                             <div class="catagories-menu">
                                 <ul id="menu-content2" class="menu-content collapse show">
                                     <!-- Single Item -->
-                                    <li data-toggle="collapse" data-target="#clothing">
+                                    <li data-toggle="collapse">
                                         <a href="#">Hostel Collection</a>
-                                        <ul class="sub-menu collapse show" id="clothing">
-                                            <li><a href="#">All</a></li>
-                                            <li><a href="shop.html">Necessities</a></li>
-                                        <li><a href="shop.html">Clothes</a></li>
-                                        <li><a href="shop.html">Accessories</a></li>
-                                        <li><a href="shop.html">Footwear</a></li>
-                                        <li><a href="shop.html">Other Hostel Items</a></li>
+                                        <form action="category.php" method="GET">
+                                        <ul class="sub-menu collapse show" id="hostel" name='search'>
+                                        <li><a href="display.php">All</a></li>
+                                        <li><a><input type='submit' name='search' value='Necessities'></input></a></li>
+                                        <li><a><input type='submit' name='search' value='Clothes'></input></a></li>
+                                        <li><a><input type='submit' name='search' value='Accessories'></input></a></li>
+                                        <li><a><input type='submit' name='search' value='Footwear'></input></a></li>
+                                        <li><a><input type='submit' name='search' value='Other Hostel Items'></input></a></li>
                                         </ul>
+                                    </form>
                                     </li>
                                     <!-- Single Item -->
-                                    <li data-toggle="collapse" data-target="#shoes" class="collapsed">
+                                    <li data-toggle="collapse">
                                         <a href="#">Other Collection</a>
-                                        <ul class="sub-menu collapse" id="shoes">
-                                            <li><a href="#">All</a></li>
-                                           <li><a href="shop.html">Books</a></li>
-                                        <li><a href="shop.html">Cycles</a></li>
-                                        <li><a href="shop.html">Gadgets and electrical appliances</a></li>
-                                        <li><a href="shop.html">Stationary</a></li>
-                                        <li><a href="shop.html">Miscellaneous</a></li>
+                                        <form action="category.php" method="GET">
+                                        <ul class="sub-menu collapse show" id="others" name='search'>
+                                        <li><a href="display.php">All</a></li>
+                                        <li><a><input type='submit' name='search' value='Books'></input></a></li>
+                                        <li><a><input type='submit' name='search' value='Cycles'></input></a></li>
+                                        <li><a><input type='submit' name='search' value='Gadgets and electrical appliances'></input></a></li>
+                                        <li><a><input type='submit' name='search' value='Stationary'></input></a></li>
+                                        <li><a><input type='submit' name='search' value='Miscellaneous'></input></a></li>
                                         </ul>
+                                    </form>
                                     </li>
                                     
                                 </ul>
@@ -160,7 +204,7 @@
                                 <div class="product-topbar d-flex align-items-center justify-content-between">
                                     <!-- Total Products -->
                                     <div class="total-products">
-                                        <p><span> </span> products found</p>
+                                       
                                     </div>
                                     
                                 </div>
@@ -173,61 +217,85 @@
     function SearchResults($query)
     {
              
-                     $connect = mysqli_connect("localhost", "root", "", "socialsale");
+                   $connect = mysqli_connect("localhost", "root", "", "socialsale");
                    echo '<div class="shop_grid_product_area">
                     <div class="row">' ;
                     $result = mysqli_query($connect, $query);  
-                    while($row = mysqli_fetch_array($result))  
-                    {  
-                         echo '  
-  
-                            
-                            <div class="col-12 col-sm-6 col-lg-4">
-                                <div class="single-product-wrapper">
-                                    <!-- Product Image -->
-                                    <div class="product-img">
-                                        <img src="data:image/jpeg;base64,'.base64_encode($row['image'] ).'"  />
-                                       
-                                        <!-- Product Badge -->
-                                        <div class="product-badge new-badge">
-                                            <span>New</span>
+                    if(mysqli_num_rows($result))
+                    { 
+                        while($row = mysqli_fetch_array($result))  
+                        {  
+                             echo '  
+      
+                                
+                                <div class="col-12 col-sm-6 col-lg-4">
+                                    <div class="single-product-wrapper">
+                                        <!-- Product Image -->
+                                        <div class="product-img">
+                                            <img src="data:image/jpeg;base64,'.base64_encode($row['image'] ).'"  />
+                                           
+                                            <!-- Product Badge -->
+                                            <div class="product-badge new-badge">
+                                                <span>New</span>
+                                            </div>
+
+                                            <!-- Favourite -->
+                                            <div class="product-favourite">
+                                                <a href="#" class="favme fa fa-heart"></a>
+                                            </div>
                                         </div>
 
-                                        <!-- Favourite -->
-                                        <div class="product-favourite">
-                                            <a href="#" class="favme fa fa-heart"></a>
-                                        </div>
-                                    </div>
+                                        <!-- Product Description -->
+                                        <div class="product-description">
+                                           <span>' . $row['category'] . '</span>
+                                            <a href="single-product-details.html">
+                                              <h6>' .$row['name']. '</h6>
+                                            </a>
+                                            <p class="product-price">' .$row['price']. '</p>
 
-                                    <!-- Product Description -->
-                                    <div class="product-description">
-                                       <span>' . $row['category'] . '</span>
-                                        <a href="single-product-details.html">
-                                          <h6>' .$row['name']. '</h6>
-                                        </a>
-                                        <p class="product-price">' .$row['price']. '</p>
-
-                                        <!-- Hover Content -->
-                                        <div class="hover-content">
-                                            <!-- Add to Cart -->
-                                            <div class="add-to-cart-btn">
-                                                <a href="#" class="btn essence-btn">Add to Cart</a>
+                                            <!-- Hover Content -->
+                                            <div class="hover-content">
+                                                <!-- Add to Cart -->
+                                                <div class="add-to-cart-btn">
+                                                    <a href="#" class="btn essence-btn">Add to Cart</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                              ';  
-                    }  
+                                  ';  
+                                }
+                            }
+                            else{
+                                 echo "No products found";
+                            }  
                        echo '</div>
-                        </div>';
-                       
-                include_once('footer.php');
-                
+                        </div>
+                        </div>
+                        </div>
+                        </section>
+                        
+                        <div>';    
+                        include_once('footer.php');
+                        echo '</div>';
+    
                 }
 
-
             ?>  
+
+
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Plugins js -->
+    <script src="js/plugins.js"></script>
+    <!-- Classy Nav js -->
+    <script src="js/classy-nav.min.js"></script>
+    <!-- Active js -->
+    <script src="js/active.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
 
      </body>  
 </html>  

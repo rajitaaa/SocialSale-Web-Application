@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Search results</title>
+    <title>SocialSale - intra-college e-market and mentoring</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
@@ -23,7 +23,7 @@
          
         
         $sql = "SELECT * FROM products
-            WHERE (`name` LIKE '%".$query."%') OR (`category` LIKE '%".$query."%')";
+            WHERE (`category` LIKE '%".$query."%')";
         $raw_results = $con->query($sql) or die(mysql_error());
              
         include_once('view.php');
