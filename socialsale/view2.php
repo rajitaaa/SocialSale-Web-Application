@@ -53,7 +53,7 @@
     include_once('header.php');
     ?>
     
-  <!-- ##### Right Side Cart Area ##### -->
+    <!-- ##### Right Side Cart Area ##### -->
     <div class="cart-bg-overlay"> </div>
 
     <div class="right-side-cart-area">
@@ -76,7 +76,7 @@
     </div>
 
     <!-- ##### Right Side Cart End ##### -->
-
+    
     
     <!-- ##### Breadcumb Area Start ##### -->
     <div class="breadcumb_area breadcumb-style-two bg-img" style="background-image: url(img/bg-img/breadcumb2.jpg);">
@@ -185,9 +185,7 @@
                                             <img src="data:image/jpeg;base64,'.base64_encode($row['image'] ).'" style="width:250px;height:160px;"/>
                                            
                                             <!-- Product Badge -->
-                                            <div class="product-badge new-badge">
-                                             <a style="color:white" href="showProduct.php?productid='.$row['productid'].'">View</a>
-                                            </div>
+                                            
 
                                             <!-- Favourite -->
                                             <div class="product-favourite">
@@ -198,18 +196,20 @@
                                         <!-- Product Description -->
                                         <div class="product-description">
                                            <span>' . $row['category'] . '</span>
-                                            <a href="">
+                                            <a href="single-product-details.html">
                                               <h6>' .$row['name']. '</h6>
                                             </a>
-                                            <p class="product-price"> Rs.'.$row['price']. '</p>
+                                            <p class="product-price">'.$row['price']. '</p>
 
+                                            <!-- Hover Content -->
                                             <!-- Hover Content -->
                                             <div class="hover-content">
                                                 <!-- Add to Cart -->
-                                                <div class="add-to-cart-btn">
-                                                     <a href="addtowishlist.php?productid='.$row['productid'].'" class="btn essence-btn">Add to Wishlist</a>
+                                                <div class="delete-btn">
+                                                    <a href="deletefromwishlist.php?productid='.$row['productid'].'" class="btn essence-btn">Remove</a>
                                                 </div>
                                             </div>
+                                           
                                         </div>
                                     </div>
                                 </div>

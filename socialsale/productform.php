@@ -1,6 +1,5 @@
  <?php  
  $connect = mysqli_connect("localhost", "root", "", "socialsale");  
- session_start();
  if(isset($_POST["insert"]))  
  {  
       $username = $_SESSION["username"];
@@ -14,7 +13,8 @@
       $query = "INSERT INTO products(name,price,phone,category,type,details,image,username) VALUES ('$productname','$price','$phone', '$category', '$type', '$details', '$file', '$username')";  
       if(mysqli_query($connect, $query))  
       {  
-           echo '<script>alert("Product details Inserted into Database")</script>';  
+           echo '<script>alert("Product details Inserted into Database")</script>'; 
+           header("location:display.php");  
       }  
  }  
  ?>  
@@ -66,8 +66,8 @@
     include_once('header.php');
     ?>
     
-    <!-- ##### Right Side Cart Area ##### -->
-    <div class="cart-bg-overlay"></div>
+<!-- ##### Right Side Cart Area ##### -->
+    <div class="cart-bg-overlay"> </div>
 
     <div class="right-side-cart-area">
 
@@ -77,68 +77,17 @@
         </div>
 
         <div class="cart-content d-flex">
-
-            <!-- Cart List Area -->
-            <div class="cart-list">
-                <!-- Single Cart Item -->
-                <div class="single-cart-item">
-                    <a href="#" class="product-image">
-                        <img src="img/product-img/product-1.jpg" class="cart-thumb" alt="">
-                        <!-- Cart Item Desc -->
-                        <div class="cart-item-desc">
-                          <span class="product-remove"><i class="fa fa-close" aria-hidden="true"></i></span>
-                            <span class="badge">Dress</span>
-                            <h6>Button Dress</h6>
-                            <p class="price">Rs. 2000</p>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Single Cart Item -->
-                <div class="single-cart-item">
-                    <a href="#" class="product-image">
-                        <img src="img/product-img/product-2.jpg" class="cart-thumb" alt="">
-                        <!-- Cart Item Desc -->
-                        <div class="cart-item-desc">
-                          <span class="product-remove"><i class="fa fa-close" aria-hidden="true"></i></span>
-                            <span class="badge">Dress</span>
-                            <h6>Button Dress</h6>
-                            <p class="price">Rs. 2000</p>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Single Cart Item -->
-                <div class="single-cart-item">
-                    <a href="#" class="product-image">
-                        <img src="img/product-img/product-3.jpg" class="cart-thumb" alt="">
-                        <!-- Cart Item Desc -->
-                        <div class="cart-item-desc">
-                          <span class="product-remove"><i class="fa fa-close" aria-hidden="true"></i></span>
-                            <span class="badge">Dress</span>
-                            <h6>Button Dress</h6>
-                            <p class="price">Rs. 2000</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
             <!-- Cart Summary -->
             <div class="cart-amount-summary">
-
-                <h2>Wishlist</h2>
-                <ul class="summary-table">
-                    <li><span>subtotal:</span> <span>$274.00</span></li>
-                    <li><span>delivery:</span> <span>Free</span></li>
-                    <li><span>discount:</span> <span>-15%</span></li>
-                    <li><span>total:</span> <span>$232.00</span></li>
-                </ul>
+                    <img src="img/core-img/wishlist.gif">
+              
                 <div class="checkout-btn mt-100">
-                    <a href="checkout.html" class="btn essence-btn">View</a>
+                    <a href="wishlist.php" class="btn essence-btn">View Wishlist</a>
                 </div>
             </div>
         </div>
     </div>
+
     <!-- ##### Right Side Cart End ##### -->
     
     <!-- ##### Breadcumb Area Start ##### -->

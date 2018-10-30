@@ -24,14 +24,7 @@ session_start();
 <!-- Core Style CSS -->
 <link rel="stylesheet" href="css/core-style.css">
 <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
-<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
-<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
-<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
-<link href="plugins/colorbox/colorbox.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="styles/main_styles.css">
-<link rel="stylesheet" type="text/css" href="styles/responsive.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 </head>
 
@@ -109,19 +102,19 @@ session_start();
                         <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                     </form>
                 </div>
-                
+               
                 <!-- User Login Info -->
                 <div class="user-login-info">
-                    <li> <a href="#"><img src="img/core-img/user.svg" alt=""></a>
-                    <ul class="dropdown">
-                                
+                    <ul>
+                    <li><button onclick="myFunction()" style="background-color: white;border: none;"> <a> <img src="img/core-img/user.svg" alt=""> </a> </button>
+                    <ul id="drop" class="dropdown hide" style="background-color: white">
                                 <?php
                                     if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true)
                                     {
                                         echo "
-                                            <li><a href=''> Welcome </a></li>
-                                            <li><a href=''>Account</a></li>
-                                            <li><a href=''>Track Order</a></li>
+                                            <li><a href=''> Welcome " .$_SESSION['username']."! </a></li>
+                                            <li><a href='editprofile.php'>Edit Profile</a></li>
+                                            <li><a href='myitems.php'>My Items</a></li>
                                             <li><a href='logout.php'>Log Out</a></li>
                                         ";
                                     }
@@ -135,8 +128,12 @@ session_start();
                                 
                             </ul>
                         </li>
+                    </ul>
+                     
+                </div>
 
-                </div><!-- Cart Area -->
+
+                <!-- Cart Area -->
                 <div class="cart-area">
                     <a href="#" id="essenceCartBtn"><img src="img/core-img/wishlist.png" alt=""> </a>
                 </div>
@@ -147,6 +144,14 @@ session_start();
     
     <!-- ##### Header Area End ##### -->
    
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("drop").classList.toggle("hide");
+}
+
+</script>
 
     <script src="js/jquery/jquery-2.2.4.min.js"></script>
     <!-- Popper js -->
@@ -160,13 +165,7 @@ session_start();
     <!-- Active js -->
     <script src="js/active.js"></script>
     <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/custom.js"></script>
 
-<script src="styles/bootstrap4/popper.js"></script>
-<script src="styles/bootstrap4/bootstrap.min.js"></script>
-<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
-<script src="plugins/easing/easing.js"></script>
-<script src="plugins/parallax-js-master/parallax.min.js"></script>
-<script src="plugins/colorbox/jquery.colorbox-min.js"></script>
-<script src="js/custom.js"></script>
    </body>
 </html>

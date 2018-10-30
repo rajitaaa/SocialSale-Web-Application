@@ -32,6 +32,7 @@ include_once('header.php');
 <link href="plugins/colorbox/colorbox.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
 <link rel="stylesheet" type="text/css" href="styles/responsive.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 <script type="text/javascript">(function(t,e){var r=function(t){try{var r=e.head||e.getElementsByTagName("head")[0];a=e.createElement("script");a.setAttribute("type","text/javascript");a.setAttribute("src",t);r.appendChild(a);}catch(t){}};t.CollectId = "5bd43d0dd1b57956621ff5f3";r("https://collectcdn.com/launcher.js");})(window,document);</script>
 
@@ -49,64 +50,12 @@ include_once('header.php');
         </div>
 
         <div class="cart-content d-flex">
-
-            <!-- Cart List Area -->
-            <div class="cart-list">
-                <!-- Single Cart Item -->
-                <div class="single-cart-item">
-                    <a href="#" class="product-image">
-                        <img src="img/product-img/product-1.jpg" class="cart-thumb" alt="">
-                        <!-- Cart Item Desc -->
-                        <div class="cart-item-desc">
-                          <span class="product-remove"><i class="fa fa-close" aria-hidden="true"></i></span>
-                            <span class="badge">Dress</span>
-                            <h6>Button Dress</h6>
-                            <p class="price">Rs. 2000</p>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Single Cart Item -->
-                <div class="single-cart-item">
-                    <a href="#" class="product-image">
-                        <img src="img/product-img/product-2.jpg" class="cart-thumb" alt="">
-                        <!-- Cart Item Desc -->
-                        <div class="cart-item-desc">
-                          <span class="product-remove"><i class="fa fa-close" aria-hidden="true"></i></span>
-                            <span class="badge">Dress</span>
-                            <h6>Button Dress</h6>
-                            <p class="price">Rs. 2000</p>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Single Cart Item -->
-                <div class="single-cart-item">
-                    <a href="#" class="product-image">
-                        <img src="img/product-img/product-3.jpg" class="cart-thumb" alt="">
-                        <!-- Cart Item Desc -->
-                        <div class="cart-item-desc">
-                          <span class="product-remove"><i class="fa fa-close" aria-hidden="true"></i></span>
-                            <span class="badge">Dress</span>
-                            <h6>Button Dress</h6>
-                            <p class="price">Rs. 2000</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
             <!-- Cart Summary -->
             <div class="cart-amount-summary">
-
-                <h2>Wishlist</h2>
-                <ul class="summary-table">
-                    <li><span>subtotal:</span> <span>$274.00</span></li>
-                    <li><span>delivery:</span> <span>Free</span></li>
-                    <li><span>discount:</span> <span>-15%</span></li>
-                    <li><span>total:</span> <span>$232.00</span></li>
-                </ul>
+                    <img src="img/core-img/wishlist.gif">
+              
                 <div class="checkout-btn mt-100">
-                    <a href="checkout.html" class="btn essence-btn">View</a>
+                    <a href="wishlist.php" class="btn essence-btn">View Wishlist</a>
                 </div>
             </div>
         </div>
@@ -194,7 +143,7 @@ include_once('header.php');
                 <div class="col-12 col-sm-6 col-md-4">
                     <div class="single_catagory_area d-flex align-items-center justify-content-center bg-img" style="background-image: url(img/bg-img/books.jpg);">
                         <div class="catagory-content">
-                            <a href="#">Buy/Rent</a>
+                            <a href="display.php">Buy/Rent</a>
                         </div>
                     </div>
                 </div>
@@ -202,7 +151,7 @@ include_once('header.php');
                 <div class="col-12 col-sm-6 col-md-4">
                     <div class="single_catagory_area d-flex align-items-center justify-content-center bg-img" style="background-image: url(img/bg-img/sell.jpg);">
                         <div class="catagory-content">
-                            <a href="#">Sell/Rent</a>
+                            <a href="productform.php">Sell/Rent</a>
                         </div>
                     </div>
                 </div>
@@ -210,7 +159,7 @@ include_once('header.php');
                 <div class="col-12 col-sm-6 col-md-4">
                     <div class="single_catagory_area d-flex align-items-center justify-content-center bg-img" style="background-image: url(img/bg-img/mentor.png);">
                         <div class="catagory-content">
-                            <a href="#">Questionnaire</a>
+                            <a href="mentoring/index.php">Questionnaire</a>
                         </div>
                     </div>
                 </div>
@@ -227,7 +176,7 @@ include_once('header.php');
 				<div class="col">
 					<div class="section_title_container text-center">
 						<div class="section_subtitle">only the best</div>
-						<div class="section_title">new arrivals</div>
+						<div class="section_title">Gallery</div>
 					</div>
 				</div>
 			</div>
@@ -237,7 +186,7 @@ include_once('header.php');
 				<div class="col-lg-4 product_col">
 					<div class="product">
 						<div class="product_image">
-							<img src="images/product_1.jpg" alt="">
+							<img src="images/product_1.jpg" style="width:360px;height:538px;"alt="">
 						</div>
 						<div class="rating rating_4">
 							<i class="fa fa-star"></i>
@@ -246,16 +195,7 @@ include_once('header.php');
 							<i class="fa fa-star"></i>
 							<i class="fa fa-star"></i>
 						</div>
-						<div class="product_content clearfix">
-							<div class="product_info">
-								<div class="product_name"><a href="product.html">Woman's Long Dress</a></div>
-								<div class="product_price">$45.00</div>
-							</div>
-							<div class="product_options">
-								<div class="product_buy product_option"><img src="images/shopping-bag-white.svg" alt=""></div>
-								<div class="product_fav product_option">+</div>
-							</div>
-						</div>
+						
 					</div>
 				</div>
 
@@ -263,7 +203,7 @@ include_once('header.php');
 				<div class="col-lg-4 product_col">
 					<div class="product">
 						<div class="product_image">
-							<img src="images/product_2.jpg" alt="">
+							<img src="images/product_2.jpg" style="width:360px;height:538px;" alt="">
 						</div>
 						<div class="rating rating_4">
 							<i class="fa fa-star"></i>
@@ -272,16 +212,7 @@ include_once('header.php');
 							<i class="fa fa-star"></i>
 							<i class="fa fa-star"></i>
 						</div>
-						<div class="product_content clearfix">
-							<div class="product_info">
-								<div class="product_name"><a href="product.html">2 Piece Swimsuit</a></div>
-								<div class="product_price">$35.00</div>
-							</div>
-							<div class="product_options">
-								<div class="product_buy product_option"><img src="images/shopping-bag-white.svg" alt=""></div>
-								<div class="product_fav product_option">+</div>
-							</div>
-						</div>
+						
 					</div>
 				</div>
 
@@ -289,7 +220,7 @@ include_once('header.php');
 				<div class="col-lg-4 product_col">
 					<div class="product">
 						<div class="product_image">
-							<img src="images/product_3.jpg" alt="">
+							<img src="images/product_3.jpg" style="width:360px;height:538px;" alt="">
 						</div>
 						<div class="rating rating_4">
 							<i class="fa fa-star"></i>
@@ -298,16 +229,7 @@ include_once('header.php');
 							<i class="fa fa-star"></i>
 							<i class="fa fa-star"></i>
 						</div>
-						<div class="product_content clearfix">
-							<div class="product_info">
-								<div class="product_name"><a href="product.html">Man Blue Jacket</a></div>
-								<div class="product_price">$145.00</div>
-							</div>
-							<div class="product_options">
-								<div class="product_buy product_option"><img src="images/shopping-bag-white.svg" alt=""></div>
-								<div class="product_fav product_option">+</div>
-							</div>
-						</div>
+						
 					</div>
 				</div>
 
@@ -321,10 +243,9 @@ include_once('header.php');
 		<div class="extra_promo extra_promo_1">
 			<div class="extra_promo_image" style="background-image:url(images/extra_1.jpg)"></div>
 			<div class="extra_1_content d-flex flex-column align-items-center justify-content-center text-center">
-				<div class="extra_1_price">30%<span>off</span></div>
-				<div class="extra_1_title">On all shoes</div>
-				<div class="extra_1_text">*Integer ut imperdiet erat. Quisque ultricies lectus tellus, eu tristique magna pharetra.</div>
-				<div class="button extra_1_button"><a href="checkout.html">check out</a></div>
+				<div class="extra_1_price">Best<span>quality</span></div>
+				<div class="extra_1_title">All new products</div>
+				<div class="button extra_1_button"><a href="display.php">check out</a></div>
 			</div>
 		</div>
 		<div class="extra_promo extra_promo_2">
@@ -336,7 +257,7 @@ include_once('header.php');
 					<div class="extra_2_bottom">Articles</div>
 				</div>
 				<div class="extra_2_text">*Integer ut imperdiet erat. Quisque ultricies lectus tellus, eu tristique magna pharetra.</div>
-				<div class="button extra_2_button"><a href="blog.html">check out</a></div>
+				<div class="button extra_2_button"><a href="blog.php">check out</a></div>
 			</div>
 		</div>
 	</div>

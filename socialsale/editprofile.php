@@ -1,67 +1,71 @@
- <?php  
- $connect = mysqli_connect("localhost", "root", "", "socialsale");  
- session_start();
- 
- 
- if(isset($_POST["insert"]))  
- {  
-      
-      $productname = mysqli_real_escape_string($connect,$_POST['productname']);
-      $l_username = mysqli_real_escape_string($connect,$_POST['username']);
-      $password = mysqli_real_escape_string($connect,$_POST['password']);
- 
-      if($l_username == $_SESSION["username"] )
-      {
-            global $con;
-            $query1 = "SELECT * FROM `user_login` WHERE `l_username`='".mysqli_real_escape_string($connect,$_POST['username'])."' ";
-            $result=$connect->query($query1);
+ <?php
 
-            if($result->num_rows>0)
-            {
-              $row=$result->fetch_assoc();
 
-              if($row['password']== md5($password) && $row['l_username']== $l_username)
-                {
-                global $con;
-                
-                $query = "SELECT * FROM products WHERE `name`='".mysqli_real_escape_string($connect,$_POST['productname'])."' ";
-                  $result=$connect->query($query);
-                  $row=$result->fetch_assoc();
-                  $productid=$row['productid'];
-                 $query3 = "DELETE FROM products WHERE `productid`='$productid' "; 
-                  
-                $query2 = "DELETE FROM wishlist WHERE `product_id`='$productid' ";
-                  if(mysqli_query($connect, $query3))  
-                  {  
-                     echo '<script>alert("Product successfully deleted!")</script>';  
-                  } 
-                  else
-                  {
-                       echo '<script>alert("Product not found under entered username and password")</script>';  
-                  } 
-                  if(mysqli_query($connect, $query2))  
-                  {  
-                     echo '<script>alert("Product successfully deleted from all wishlists!")</script>';  
-                  } 
-                  else
-                  {
-                       echo '<script>alert("Product not found under entered username and password")</script>';  
-                  } 
-                }
-                 else
-                 {
-                      echo '<script>alert("Incorrect username or password")</script>';  
-                 }
-            }
-      }
+    include_once('header.php');
+    
 
-      else
-     {
-          echo '<script>alert("Not authorised to delete product")</script>';  
-     }
+              $connect = mysqli_connect("localhost", "root", "", "socialsale");  
+            
+		if (isset($_POST['insert'])) {
+
+               $newemail = mysqli_real_escape_string($connect,$_POST['email']);
+               $username = mysqli_real_escape_string($connect,$_POST['username']);
+               $username2 = $_SESSION["username"];
+               $newpassword =mysqli_real_escape_string($connect, md5($_POST['password']));
+               $newpassword1 =mysqli_real_escape_string($connect, md5($_POST['confirmation']));
+	       $phone = mysqli_real_escape_string($connect,$_POST['phone']);
+               $college = mysqli_real_escape_string($connect,$_POST['college']);
+               $address = mysqli_real_escape_string($connect,$_POST['address']);
+           
+              if($newpassword==$newpassword1 && $username==$username2){
+              $query = "UPDATE user_login SET email_id ='$newemail', password ='$newpassword' WHERE l_username='$username2'";
+              if(strlen($phone))
+              $query1 = "UPDATE user_login SET phone_no ='$phone' WHERE l_username='$username2'";
+              if(strlen($college))
+              $query2 = "UPDATE user_login SET college ='$college' WHERE l_username='$username2'";
+               if(strlen($address))
+              $query3 = "UPDATE user_login SET address ='$address' WHERE l_username='$username2'";
+              
+           
+              
+             
+
+        if(mysqli_query($connect, $query))  
+      {    
+           echo '<script>alert("Database updated")</script>'; 
+          header("location:index2.php"); 
+      }  
+else
+        echo '<script>alert("Enter correct details")</script>';
+ if(mysqli_query($connect, $query1))  
+      {    
+           echo '<script>alert("Database updated")</script>';  
+          header("location:index.php");
+      }  
+else
+        echo '<script>alert("Enter correct details")</script>';
+           header("location:index.php");
+
+
+ if(mysqli_query($connect, $query2))  
+      {    
+           echo '<script>alert("Database updated")</script>';  
+          header("location:index.php");
+      }  
+else
+        echo '<script>alert("Enter correct details")</script>';
+ if(mysqli_query($connect, $query3))  
+      {    
+           echo '<script>alert("Database updated")</script>';
+ header("location:index.php");  
+      }  
+else
+        echo '<script>alert("Enter correct details")</script>';
+}}
    
- }  
- ?>  
+         ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -105,12 +109,9 @@
     
 <body>
 
-  
-    <?php
-    include_once('header.php');
-    ?>
+
     
- <!-- ##### Right Side Cart Area ##### -->
+   <!-- ##### Right Side Cart Area ##### -->
     <div class="cart-bg-overlay"> </div>
 
     <div class="right-side-cart-area">
@@ -133,7 +134,9 @@
     </div>
 
     <!-- ##### Right Side Cart End ##### -->
-s
+
+    
+    <!-- ##### Right Side Cart End ##### -->
     
     <!-- ##### Breadcumb Area Start ##### -->
     <div class="breadcumb_area breadcumb-style-two bg-img" style="background-image: url(img/bg-img/breadcumb2.jpg);">
@@ -141,7 +144,7 @@ s
             <div class="row h-100 align-items-center">
                 <div class="col-12">
                     <div class="page-title text-center">
-                        <h2 style="color: darkcyan">DELETE PRODUCT</h2>
+                        <h2 style="color: darkcyan">PROFILE</h2>
                     </div>
                 </div>
             </div>
@@ -154,26 +157,50 @@ s
 		<div class="wrap-contact100">
 			<form class="contact100-form validate-form" method="post" enctype="multipart/form-data">
 				<span class="contact100-form-title">
-					Delete Product
+					Edit Profile
 				</span>
 
-				<div class="wrap-input100 validate-input bg1" data-validate="Please Type the product name">
-					<span class="label-input100">Product Name</span>
-					<input class="input100" type="text" name="productname" placeholder="Enter the name of the product">
+				<div class="wrap-input100 validate-input bg1" data-validate=$_SESSION["username"]>
+					<span class="label-input100">Username</span>
+					<input class="input100" type="text" name="username" placeholder="Enter your username">
+				</div>
+                                <div class="wrap-input100 validate-input bg1" data-validate="Please Type your email-id">
+					<span class="label-input100">Email-Id</span>
+					<input class="input100" type="text" name="email" placeholder="Enter your email-id">
 				</div>
 
-				<div class="wrap-input100 bg1 rs1-wrap-input100">
-					<span class="label-input100">UserName</span>
-					<input class="input100" type="text" name="username" placeholder="Enter username">
+				<div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate = "New Password">
+					<span class="label-input100">New Password </span>
+					<input class="input100" type="password" name="password" placeholder="Enter password" required>
+                                       
 				</div>
 
-        <div class="wrap-input100 bg1 rs1-wrap-input100">
-          <span class="label-input100">Password</span>
-          <input class="input100" type="password" name="password" placeholder="Enter password">
-        </div>
+				<div class="wrap-input100 bg1 rs1-wrap-input100" data-validate = "Confirm your Password again">
+					<span class="label-input100">Confirm Password</span>
+					<input class="input100" type="password" name="confirmation" placeholder="Enter password again" required>
+				</div>
+
+			<div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate = "Please type your phone number" >
+			      <span class="label-input100">Phone number</span>
+			      <input class="input100" type="text" name="phone" placeholder="Enter your phone number" required>
+			    </div>
+                         <div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate = "Please type your college name" >
+			      <span class="label-input100">College name</span>
+			      <input class="input100" type="text" name="college" placeholder="Enter your college name" required>
+			    </div>
+                       <div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate = "Please type your contact address" >
+			      <span class="label-input100">Contact address</span>
+			      <input class="input100" type="text" name="address" placeholder="Enter your address" required>
+			    </div>
+
+
 
 				
-				<div class="container-contact100-form-btn">
+				
+
+						
+
+			<div class="container-contact100-form-btn">
 					
                     <button class="contact100-form-btn" type="submit" name="insert" id="insert" value="Insert">
 						<span>

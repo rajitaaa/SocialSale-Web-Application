@@ -360,9 +360,9 @@ img {
     position: relative;
     z-index: 1;
     -webkit-box-flex: 0;
-    -ms-flex: 0 0 90px;
-    flex: 0 0 90px;
-    width: 90px;
+    -ms-flex: 0 0 120px;
+    flex: 0 0 120px;
+    width: 120px;
     display: block;
     text-align: center;
     border-left: 1px solid #ebebeb;
@@ -417,7 +417,7 @@ img {
 /* Cart Area CSS */
 .right-side-cart-area {
   position: fixed;
-  width: 670px;
+  width: 230px;
   height: 100%;
   top: 0;
   right: -800px;
@@ -537,6 +537,53 @@ img {
               margin-bottom: 5px;
               text-align: left;
               padding: 0; }
+
+              .hide {
+                display: none;
+                }
+
+                              .dropdown {
+                  float: left;
+                  overflow: hidden;
+              }
+
+              .dropdown .dropbtn {
+                  cursor: pointer;
+                  font-size: 16px;    
+                  border: none;
+                  outline: none;
+                  color: white;
+                  padding: 14px 16px;
+                  background-color: inherit;
+                  font-family: inherit;
+                  margin: 0;
+              }
+
+              .navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
+                  background-color: red;
+              }
+
+              .dropdown-content {
+                  display: none;
+                  position: absolute;
+                  background-color: #f9f9f9;
+                  min-width: 160px;
+                  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                  z-index: 1;
+              }
+
+              .dropdown-content a {
+                  float: none;
+                  color: black;
+                  padding: 12px 16px;
+                  text-decoration: none;
+                  display: block;
+                  text-align: left;
+              }
+
+              .dropdown-content a:hover {
+                  background-color: #ddd;
+              }
             .right-side-cart-area .cart-content .cart-list .single-cart-item .product-image .cart-item-desc h6 {
               font-size: 12px;
               color: #ffffff;
