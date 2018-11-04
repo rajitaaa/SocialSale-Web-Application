@@ -48,9 +48,9 @@
     
 <body>
 
-      <?php
+    <?php
     include_once('header.php');
-     $username = $_SESSION['username'];
+    $username = $_SESSION['username'];
     ?>
 
      <!-- ##### Right Side Cart Area ##### -->
@@ -83,7 +83,7 @@
             <div class="row h-100 align-items-center">
                 <div class="col-12">
                     <div class="page-title text-center">
-                        <?php echo "<h2 style='color: darkcyan'>".$username."'s WISHLIST </h2> "; ?>
+                      <?php echo "<h2 style='color: darkcyan'>".$username."'s ITEMS </h2> "; ?>
                     </div>
                 </div>
             </div>
@@ -159,7 +159,7 @@
                                             <div class="hover-content">
                                                 <!-- Add to Cart -->
                                                 <div class="delete-btn">
-                                                    <a href="deletefromwishlist.php?productid='.$row['productid'].'" class="btn essence-btn">Remove</a>
+                                                    <a href="deleteproduct.php?productid='.$row['productid'].'" class="btn essence-btn">Delete</a>
                                                 </div>
                                             </div>
                                            

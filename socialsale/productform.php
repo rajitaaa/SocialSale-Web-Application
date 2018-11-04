@@ -1,5 +1,6 @@
  <?php  
  $connect = mysqli_connect("localhost", "root", "", "socialsale");  
+ session_start();
  if(isset($_POST["insert"]))  
  {  
       $username = $_SESSION["username"];

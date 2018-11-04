@@ -186,7 +186,7 @@ include_once('header.php');
 				<div class="col-lg-4 product_col">
 					<div class="product">
 						<div class="product_image">
-							<img src="images/product_1.jpg" style="width:360px;height:538px;"alt="">
+							<img src="images/formals2.jpg" style="width:400px;height:538px;"alt="">
 						</div>
 						<div class="rating rating_4">
 							<i class="fa fa-star"></i>
@@ -203,7 +203,7 @@ include_once('header.php');
 				<div class="col-lg-4 product_col">
 					<div class="product">
 						<div class="product_image">
-							<img src="images/product_2.jpg" style="width:360px;height:538px;" alt="">
+							<img src="images/heels2.jpg" style="width:360px;height:538px;" alt="">
 						</div>
 						<div class="rating rating_4">
 							<i class="fa fa-star"></i>
@@ -220,7 +220,7 @@ include_once('header.php');
 				<div class="col-lg-4 product_col">
 					<div class="product">
 						<div class="product_image">
-							<img src="images/product_3.jpg" style="width:360px;height:538px;" alt="">
+							<img src="images/dress2.jpg" style="width:360px;height:538px;" alt="">
 						</div>
 						<div class="rating rating_4">
 							<i class="fa fa-star"></i>
@@ -256,7 +256,7 @@ include_once('header.php');
 					<div class="extra_2_top">Blogs</div>
 					<div class="extra_2_bottom">Articles</div>
 				</div>
-				<div class="extra_2_text">*Integer ut imperdiet erat. Quisque ultricies lectus tellus, eu tristique magna pharetra.</div>
+				<div class="extra_2_text">Read exciting blogs about various topics.</div>
 				<div class="button extra_2_button"><a href="blog.php">check out</a></div>
 			</div>
 		</div>
@@ -276,7 +276,7 @@ include_once('header.php');
 							<li><a href="#">#buysellrent</a></li>
 						</ul>
 					</div>
-					<div class="gallery_text text-center">*Integer ut imperdiet erat. Quisque ultricies lectus tellus, eu tristique magna pharetra.</div>
+					<div class="gallery_text text-center"> </div>
 				</div>
 			</div>
 		</div>	
@@ -352,30 +352,30 @@ include_once('header.php');
 
 						<!-- Testimonial Item -->
 						<div class="owl-item">
-							<div class="test_text">“Integer ut imperdiet erat. Quisque ultricies lectus tellus, eu tristique magna pharetra nec. Fusce vel lorem libero. Integer ex mi, facilisis sed nisi ut, vestibulum ultrices nulla. Aliquam egestas tempor leo.”</div>
+							<div class="test_text">“*Great website to buy, sell and rent stuff all at one place. Very convenient to use.”</div>
 							<div class="test_content">
 								<div class="test_image"><img src="images/testimonials.jpg" alt=""></div>
-								<div class="test_name">Christinne Smith</div>
+								<div class="test_name">Shama</div>
 								<div class="test_title">client</div>
 							</div>
 						</div>
 
 						<!-- Testimonial Item -->
 						<div class="owl-item">
-							<div class="test_text">“Integer ut imperdiet erat. Quisque ultricies lectus tellus, eu tristique magna pharetra nec. Fusce vel lorem libero. Integer ex mi, facilisis sed nisi ut, vestibulum ultrices nulla. Aliquam egestas tempor leo.”</div>
+							<div class="test_text">“Love the mentoring feature in this website. Can ask any kind of question and always find answers here!”</div>
 							<div class="test_content">
-								<div class="test_image"><img src="images/testimonials.jpg" alt=""></div>
-								<div class="test_name">Christinne Smith</div>
+								<div class="test_image"><img src="images/testimonials1.jpeg" alt=""></div>
+								<div class="test_name">Piyush</div>
 								<div class="test_title">client</div>
 							</div>
 						</div>
 
 						<!-- Testimonial Item -->
 						<div class="owl-item">
-							<div class="test_text">“Integer ut imperdiet erat. Quisque ultricies lectus tellus, eu tristique magna pharetra nec. Fusce vel lorem libero. Integer ex mi, facilisis sed nisi ut, vestibulum ultrices nulla. Aliquam egestas tempor leo.”</div>
+							<div class="test_text">“Very easy to search for products in this website. Selling and renting items makes college life so much easier.”</div>
 							<div class="test_content">
-								<div class="test_image"><img src="images/testimonials.jpg" alt=""></div>
-								<div class="test_name">Christinne Smith</div>
+								<div class="test_image"><img src="images/testimonials2.jpg" alt=""></div>
+								<div class="test_name">Shivani</div>
 								<div class="test_title">client</div>
 							</div>
 						</div>
@@ -405,7 +405,7 @@ include_once('header.php');
 				</div>
 				<div class="row newsletter_container">
 					<div class="col-lg-6 offset-lg-1">
-						<div class="newsletter_text"> <a style="text-align: center" href="contact.html" class="newsletter_button" >Find out more about us</a> </div>
+						<div class="newsletter_text"> <a style="text-align: center" href="contact.php" class="newsletter_button" >Find more about us</a> </div>
 					</div>
 				</div>
 			</div>

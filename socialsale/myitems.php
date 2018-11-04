@@ -5,6 +5,6 @@
      include_once('header.php');
      $username = $_SESSION["username"];
     $sql = "SELECT * FROM products  WHERE username='$username' ORDER BY productid DESC";  
-    include_once('view.php');
+    include_once('view3.php');
     SearchResults($sql);
 ?> 

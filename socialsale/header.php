@@ -25,6 +25,26 @@ session_start();
 <link rel="stylesheet" href="css/core-style.css">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
+    <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
+    <link href="plugins/colorbox/colorbox.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
+    <link rel="stylesheet" type="text/css" href="styles/responsive.css">
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" type="text/css" href="vendor/noui/nouislider.min.css">
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
 
 </head>
 
@@ -52,23 +72,24 @@ session_start();
                         <ul>
                             <li><a href="#">Categories</a>
                                 <div class="megamenu">
-                                   
-                                    <ul class="single-mega cn-col-6">
+                                   <form action="category.php" method="GET">
+                                    <ul class="single-mega cn-col-6" name='search'>
                                         <li class="title">Hostel Collection</li>
-                                        <li><a href="shop.html">Necessities</a></li>
-                                        <li><a href="shop.html">Clothes</a></li>
-                                        <li><a href="shop.html">Accessories</a></li>
-                                        <li><a href="shop.html">Footwear</a></li>
-                                        <li><a href="shop.html">Other Hostel Items</a></li>
+                                       <li><a><input type='submit' name='search' value='Necessities'></input></a></li>
+                                        <li><a><input type='submit' name='search' value='Clothes'></input></a></li>
+                                        <li><a><input type='submit' name='search' value='Accessories'></input></a></li>
+                                        <li><a><input type='submit' name='search' value='Footwear'></input></a></li>
+                                        <li><a><input type='submit' name='search' value='Other Hostel Items'></input></a></li>
                                     </ul>
-                                    <ul class="single-mega cn-col-6">
+                                    <ul class="single-mega cn-col-6" name='search'>
                                         <li class="title">Other Collection</li>
-                                        <li><a href="shop.html">Books</a></li>
-                                        <li><a href="shop.html">Cycles</a></li>
-                                        <li><a href="shop.html">Gadgets and electrical appliances</a></li>
-                                        <li><a href="shop.html">Stationary</a></li>
-                                        <li><a href="shop.html">Miscellaneous</a></li>
+                                        <li><a><input type='submit' name='search' value='Books'></input></a></li>
+                                        <li><a><input type='submit' name='search' value='Cycles'></input></a></li>
+                                        <li><a><input type='submit' name='search' value='Gadgets and electrical appliances'></input></a></li>
+                                        <li><a><input type='submit' name='search' value='Stationary'></input></a></li>
+                                        <li><a><input type='submit' name='search' value='Miscellaneous'></input></a></li>
                                     </ul>
+                                </form>
                                    
                                 </div>
                             </li>
@@ -78,7 +99,7 @@ session_start();
                                     <li><a href="display.php">Buy or Rent</a></li>
                                     <li><a href="productform.php">Sell or put on rent</a></li>
                                     <li><a href="deleteform.php">Delete a product</a></li>
-                                    <li><a href="wishlist.html"> Wishlist</a></li>
+                                    <li><a href="wishlist.php"> Wishlist</a></li>
                                     <li><a href="mentoring/index.php">Mentoring</a></li>
                                     <li><a href="blog.php">Blog Page</a></li>
                                     <li><a href="contact.php">Contact</a></li>
